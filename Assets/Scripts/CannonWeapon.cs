@@ -1,43 +1,11 @@
 using UnityEngine;
 
-public class Shooting : MonoBehaviour
+public class CannonWeapon : WeaponBase
 {
-    public float shootRange = 100f;
-    public float shootForce = 10f;
-    public float shootCooldownTimerMax = 10f;
-    float shootCooldown =0f;
-    bool canShoot = true;
-    public Transform firePoint;
-    public LayerMask hitLayers;
-    public GameObject hitEffectPrefab;
-    public GameObject muzzleFlashPrefab;
-    public LineRenderer laserLine;
 
-    public AudioClip shootSound;
-    public AudioClip hitSound;
-    public AudioSource audioSource;
+    public float coneRadius = 1.5f; // radius for the cone/sphere cast
 
-    void Update()
-    {
-        if (Input.GetMouseButton(0))
-        {
-            if(canShoot){
-                ShootRay();
-                canShoot = false;
-            }
-            shootCooldown += Time.deltaTime;
-            if(shootCooldown>= shootCooldownTimerMax){
-                shootCooldown = 0f;
-                canShoot = true;
-            }
-        }else{
-            shootCooldown = 0f;
-            canShoot = true;
-
-        }
-    }
-
-    void ShootRay()
+    protected override void Shoot()
     {
         // 🔊 Play shoot sound
         if (shootSound != null && audioSource != null)
@@ -53,7 +21,8 @@ public class Shooting : MonoBehaviour
         }
 
         Ray ray = new Ray(firePoint.position, firePoint.forward);
-        if (Physics.Raycast(ray, out RaycastHit hit, shootRange, hitLayers))
+        //if (Physics.Raycast(ray, out RaycastHit hit, shootRange, hitLayers))
+        if (Physics.SphereCast(ray, coneRadius, out RaycastHit hit, shootRange, hitLayers))
         {
             // ✨ Hit Effect
             if (hitEffectPrefab != null)
@@ -79,6 +48,13 @@ public class Shooting : MonoBehaviour
             {
                 laserLine.SetPosition(0, firePoint.position);
                 laserLine.SetPosition(1, hit.point);
+            }
+
+            // 🎯 Damage enemy
+            AlienBase alien = hit.collider.GetComponent<AlienBase>();
+            if (alien != null)
+            {
+                alien.TakeDamage(20); // Cannon does 20 dmg
             }
         }
         else
