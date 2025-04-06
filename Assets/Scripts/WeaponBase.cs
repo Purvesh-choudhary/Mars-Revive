@@ -20,7 +20,8 @@ public abstract class WeaponBase : MonoBehaviour
     public AudioSource audioSource;
 
     public bool enableAiming = true;
-
+    public Transform cannonHead; 
+    
     protected virtual void Update()
     {
         HandleCooldown();
@@ -36,6 +37,7 @@ public abstract class WeaponBase : MonoBehaviour
             canShoot = false;
         }
     }
+
 
     protected void HandleCooldown()
     {
