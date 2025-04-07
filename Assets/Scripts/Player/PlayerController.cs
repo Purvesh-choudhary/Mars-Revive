@@ -6,7 +6,6 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float rotationSpeed = 100f;
-    public Transform cannonTransform;
 
     void Update()
     {

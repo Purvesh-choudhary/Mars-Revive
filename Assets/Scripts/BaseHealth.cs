@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class BaseHealth : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float maxHealth = 100f;
+    private float currentHealth;
+
+    public delegate void BaseDestroyed(BaseHealth baseHealth);
+    public static event BaseDestroyed OnBaseDestroyed;
+
     void Start()
     {
-        
+        currentHealth = maxHealth;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TakeDamage(float amount)
     {
-        
+        currentHealth -= amount;
+
+        if (currentHealth <= 0)
+        {
+            OnBaseDestroyed?.Invoke(this);
+            Destroy(gameObject);
+        }
     }
 }

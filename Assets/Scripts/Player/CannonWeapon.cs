@@ -57,12 +57,12 @@ public class CannonWeapon : WeaponBase
                 alien.TakeDamage(20); // Cannon does 20 dmg
             }
 
-            // // 🎯 Damage base
-            // BaseHealth baseHealth = hit.collider.GetComponent<BaseHealth>();
-            // if (baseHealth != null)
-            // {
-            //     baseHealth.TakeDamage(20); // Same damage as alien
-            // }
+            // 🎯 Damage base
+            BaseHealth baseHealth = hit.collider.GetComponent<BaseHealth>();
+            if (baseHealth != null)
+            {
+                baseHealth.TakeDamage(20); // Same damage as alien
+            }
         }
         else
         {
