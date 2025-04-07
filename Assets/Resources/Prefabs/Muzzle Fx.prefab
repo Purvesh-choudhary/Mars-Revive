@@ -65,6 +65,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
         type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
+        type: 3}
       propertyPath: lengthInSec
       value: 0.5
       objectReference: {fileID: 0}
@@ -75,8 +80,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
         type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
+        type: 3}
+      propertyPath: InitialModule.startSizeY.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
+        type: 3}
+      propertyPath: InitialModule.startSizeZ.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
+        type: 3}
       propertyPath: InitialModule.startSpeed.scalar
-      value: 19.72
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
         type: 3}
@@ -91,12 +111,62 @@ PrefabInstance:
     - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0
+      value: 0.62214637
       objectReference: {fileID: 0}
     - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
+        type: 3}
+      propertyPath: InitialModule.startColor.minColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
+        type: 3}
+      propertyPath: InitialModule.startColor.minColor.g
+      value: 0.7327649
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
+        type: 3}
+      propertyPath: InitialModule.startColor.minColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
+        type: 3}
+      propertyPath: InitialModule.startColor.minMaxState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key0.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key0.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key0.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key1.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key1.g
+      value: 0.8187932
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.m_ColorSpace
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
         type: 3}
