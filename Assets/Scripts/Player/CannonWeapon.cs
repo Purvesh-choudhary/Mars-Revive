@@ -4,7 +4,7 @@ public class CannonWeapon : WeaponBase
 {
 
     public float coneRadius = 1.5f; // radius for the cone/sphere cast
-
+    public int damagePerShoot = 20;
     protected override void Shoot()
     {
         // 🔊 Play shoot sound
@@ -54,14 +54,14 @@ public class CannonWeapon : WeaponBase
             AlienBase alien = hit.collider.GetComponent<AlienBase>();
             if (alien != null)
             {
-                alien.TakeDamage(20); // Cannon does 20 dmg
+                alien.TakeDamage(damagePerShoot); // Cannon does 20 dmg
             }
 
             // 🎯 Damage base
             BaseHealth baseHealth = hit.collider.GetComponent<BaseHealth>();
             if (baseHealth != null)
             {
-                baseHealth.TakeDamage(20); // Same damage as alien
+                baseHealth.TakeDamage(damagePerShoot); // Same damage as alien
             }
         }
         else
