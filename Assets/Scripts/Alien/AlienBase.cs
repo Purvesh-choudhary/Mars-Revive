@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class AlienBase : MonoBehaviour
 {
     public float moveSpeed;
-    public float chaseRange;
+    //public float chaseRange;
     public float attackRange;
     public float attackCooldown;
     public int attackDamage;
@@ -33,7 +33,6 @@ public abstract class AlienBase : MonoBehaviour
         float distance = Vector3.Distance(transform.position, player.position);
 
         if (distance <= attackRange)
-
         {
 
             if (cooldownTimer <= 0)
@@ -48,11 +47,14 @@ public abstract class AlienBase : MonoBehaviour
 
         }
 
-        else if (distance <= chaseRange && isAlive)
-
+        // else if (distance <= chaseRange && isAlive)
+        else if (isAlive)
         {
-
-            ChasePlayer();
+            AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+            if (!stateInfo.IsName("Attack")) 
+            {
+                ChasePlayer();
+            }
 
         }
 
@@ -62,8 +64,13 @@ public abstract class AlienBase : MonoBehaviour
     protected void ChasePlayer()
     {
         animator.SetBool("isWalking",true);
-        transform.LookAt(player);
-        transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+        // transform.LookAt(player);
+        // transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+
+        Vector3 targetPosition = new Vector3(player.position.x, transform.position.y, player.position.z);
+        transform.LookAt(new Vector3(player.position.x, transform.position.y, player.position.z));
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+
     }
 
      public virtual void TakeDamage(float amount)
@@ -82,6 +89,6 @@ public abstract class AlienBase : MonoBehaviour
         Destroy(gameObject,DeathTimer);
     }
 
-    protected abstract void Attack(); // override in child
+    protected abstract void Attack();
 }
 
