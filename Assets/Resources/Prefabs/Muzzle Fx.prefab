@@ -8,6 +8,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3014811685140240330, guid: 900873a2eb8120c45bdebfe72e5a1992,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 4963418832680518176, guid: 900873a2eb8120c45bdebfe72e5a1992,
         type: 3}
       propertyPath: m_Name
@@ -80,6 +85,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
         type: 3}
+      propertyPath: ColorModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
+        type: 3}
       propertyPath: InitialModule.startSize.scalar
       value: 0.5
       objectReference: {fileID: 0}
@@ -106,12 +116,12 @@ PrefabInstance:
     - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.62214637
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
         type: 3}
@@ -140,6 +150,46 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
         type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.ctime0
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.ctime1
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.g
+      value: 0.20549601
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.g
+      value: 0.6664482
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
+        type: 3}
       propertyPath: InitialModule.startColor.maxGradient.key0.b
       value: 1
       objectReference: {fileID: 0}
@@ -162,6 +212,11 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.startColor.maxGradient.key1.g
       value: 0.8187932
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.m_ColorSpace
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
         type: 3}

@@ -10,11 +10,17 @@ public abstract class AlienBase : MonoBehaviour
     public float attackCooldown;
     public int attackDamage;
     public float health = 100f;
+    public float DeathTimer= 3f;
+    
+    public Animator animator;
 
     protected float cooldownTimer;
     protected float currentHealth;
 
     protected Transform player;
+    protected bool isAlive=true;
+
+
 
     protected virtual void Start()
     {
@@ -33,7 +39,7 @@ public abstract class AlienBase : MonoBehaviour
             if (cooldownTimer <= 0)
 
             {
-
+                animator.SetTrigger("attack");
                 Attack();
 
                 cooldownTimer = attackCooldown;
@@ -42,7 +48,7 @@ public abstract class AlienBase : MonoBehaviour
 
         }
 
-        else if (distance <= chaseRange)
+        else if (distance <= chaseRange && isAlive)
 
         {
 
@@ -55,6 +61,7 @@ public abstract class AlienBase : MonoBehaviour
 
     protected void ChasePlayer()
     {
+        animator.SetBool("isWalking",true);
         transform.LookAt(player);
         transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
     }
@@ -62,15 +69,17 @@ public abstract class AlienBase : MonoBehaviour
      public virtual void TakeDamage(float amount)
     {
         health -= amount;
-        if (health <= 0)
-        {
+        if (health <= 0 && isAlive)
+        {   
             Die();
         }
     }
 
     protected virtual void Die()
     {
-        Destroy(gameObject);
+        isAlive = false;
+        animator.SetTrigger("isDead");
+        Destroy(gameObject,DeathTimer);
     }
 
     protected abstract void Attack(); // override in child

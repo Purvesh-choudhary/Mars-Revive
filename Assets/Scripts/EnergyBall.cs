@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnergyBall : MonoBehaviour
 {
     public WaveManager waveManager;
+    [SerializeField] GameObject forceFeild;
     [SerializeField] private int noOfAliens = 5;
 
     private void OnTriggerEnter(Collider other)
@@ -12,6 +13,7 @@ public class EnergyBall : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             waveManager.SpawnWave(noOfAliens); // Trigger wave spawn
+            Destroy(forceFeild);
             Destroy(gameObject);
         }
     }
