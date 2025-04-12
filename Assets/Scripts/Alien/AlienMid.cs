@@ -22,7 +22,7 @@ public class AlienMid : AlienBase
         yield return new WaitForSeconds(shootDelayTimer); 
 
         GameObject bullet = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
-        bullet.GetComponent<Rigidbody>().velocity = firePoint.forward * 10f;
+        bullet.GetComponent<Rigidbody>().velocity = firePoint.forward * 30f;
     }   
 
 }

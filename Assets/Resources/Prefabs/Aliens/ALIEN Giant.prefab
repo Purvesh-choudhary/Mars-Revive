@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5084106977002818658}
   m_Layer: 7
   m_Name: ALIEN Giant
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,9 +71,10 @@ MonoBehaviour:
   moveSpeed: 1
   attackRange: 3
   attackCooldown: 5
-  attackDamage: 3
+  attackDamage: 2
   health: 200
   DeathTimer: 4
+  score: 100
   animator: {fileID: 1128916421081851688}
   smashDelayTimer: 1.65
 --- !u!114 &5084106977002818658

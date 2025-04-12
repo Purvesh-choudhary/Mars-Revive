@@ -8,8 +8,8 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int maxHealth = 100;
-    private int currentHealth;
+    public float maxHealth = 100;
+    private float currentHealth;
     [SerializeField] private TextMeshProUGUI healthUI;
 
     [Header("Damage On UI")]
@@ -25,10 +25,10 @@ public class PlayerHealth : MonoBehaviour
         UpdateHealthOnUI(currentHealth);
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(float amount)
     {
         currentHealth -= amount;
-        healthUI.text = currentHealth.ToString();
+        healthUI.text = ((int)currentHealth).ToString();
         UpdateHealthOnUI(currentHealth);
         if (currentHealth <= 0)
         {
@@ -39,7 +39,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    private void UpdateHealthOnUI(int currentHealth)
+    private void UpdateHealthOnUI(float currentHealth)
     {
         if(currentHealth >= highMax){
             SetImageAlpha(healthHigh,0f);

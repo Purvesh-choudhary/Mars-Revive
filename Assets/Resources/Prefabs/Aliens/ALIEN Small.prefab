@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 423684418121049593}
   m_Layer: 7
   m_Name: ALIEN Small
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,9 +49,10 @@ MonoBehaviour:
   moveSpeed: 2
   attackRange: 2
   attackCooldown: 1
-  attackDamage: 1
+  attackDamage: 0.3
   health: 10
   DeathTimer: 4
+  score: 25
   animator: {fileID: 6747843602220650483}
 --- !u!65 &423684418121049593
 BoxCollider:

@@ -8,9 +8,10 @@ public abstract class AlienBase : MonoBehaviour
     //public float chaseRange;
     public float attackRange;
     public float attackCooldown;
-    public int attackDamage;
+    public float attackDamage;
     public float health = 100f;
     public float DeathTimer= 3f;
+    public int score = 50;
     
     public Animator animator;
 
@@ -19,6 +20,7 @@ public abstract class AlienBase : MonoBehaviour
 
     protected Transform player;
     protected bool isAlive=true;
+    protected float distance;
 
 
 
@@ -30,7 +32,7 @@ public abstract class AlienBase : MonoBehaviour
 
     protected virtual void Update()
     {
-        float distance = Vector3.Distance(transform.position, player.position);
+        distance = Vector3.Distance(transform.position, player.position);
 
         if (distance <= attackRange)
         {
@@ -84,7 +86,9 @@ public abstract class AlienBase : MonoBehaviour
 
     protected virtual void Die()
     {
+        LevelManager.Instance.UpdateScore(score);
         isAlive = false;
+        Destroy(gameObject.GetComponent<Collider>());
         animator.SetTrigger("isDead");
         Destroy(gameObject,DeathTimer);
     }

@@ -18,7 +18,10 @@ public class AlienGiant : AlienBase
     private IEnumerator OnSmash(float DelayTimer){
         yield return new WaitForSeconds(DelayTimer);
         gameObject.GetComponent<CinemachineImpulseSource>()?.GenerateImpulse();
-        player.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
+        if (distance <= (attackRange+2f))
+        {
+            player.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
+        }
     }
     
 }

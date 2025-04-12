@@ -14,4 +14,11 @@ public class AlienSmall : AlienBase
     {
         base.TakeDamage(amount * 1.2f); // Takes extra damage
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Destroyer") && isAlive){
+            Die();
+        }
+    }
 }

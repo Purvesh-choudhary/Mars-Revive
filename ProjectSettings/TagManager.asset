@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Obstacle
+  - Enemy
+  - Destroyer
   layers:
   - Default
   - TransparentFX
@@ -18,7 +20,7 @@ TagManager:
   - Minimap
   - Ground
   - ForceField
-  - 
+  - Player
   - 
   - 
   - 
