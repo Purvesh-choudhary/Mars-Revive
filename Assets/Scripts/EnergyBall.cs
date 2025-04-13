@@ -13,6 +13,7 @@ public class EnergyBall : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             waveManager.SpawnWave(noOfAliens); // Trigger wave spawn
+            LevelManager.Instance.EnergyBallCollected(GetComponent<EnergyBall>());
             Destroy(forceFeild);
             Destroy(gameObject);
         }

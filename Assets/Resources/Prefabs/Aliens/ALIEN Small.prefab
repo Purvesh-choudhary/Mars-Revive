@@ -31,6 +31,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 733995718687595165}
   - {fileID: 8704502762270430240}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -54,6 +55,8 @@ MonoBehaviour:
   DeathTimer: 4
   score: 25
   animator: {fileID: 6747843602220650483}
+  bloodFxTransform: {fileID: 733995718687595165}
+  bloodFx: {fileID: 2235849171968774302, guid: f90a2f30fae4db74ca6ce34d62ec30d9, type: 3}
 --- !u!65 &423684418121049593
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -75,6 +78,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.89, y: 1.846513, z: 0.8}
   m_Center: {x: 0, y: 0.89303017, z: 0}
+--- !u!1 &7880900544820955741
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 733995718687595165}
+  m_Layer: 7
+  m_Name: Fxpos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &733995718687595165
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7880900544820955741}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.924, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 104309931740532636}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &9171055459739923403
 PrefabInstance:
   m_ObjectHideFlags: 0

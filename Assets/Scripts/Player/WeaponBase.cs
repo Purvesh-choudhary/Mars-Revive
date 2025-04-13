@@ -74,5 +74,28 @@ public abstract class WeaponBase : MonoBehaviour
         }
     }
 
+
+    // protected void AimTowardCursor()
+    // {
+    //     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+    //     if (Physics.Raycast(ray, out RaycastHit hit, 200f))
+    //     {
+    //         Vector3 target = hit.point;
+    //         target.y = transform.position.y; // Only rotate on Y-axis
+    //         transform.LookAt(target);
+    //     }
+    //     else
+    //     {
+    //         // Aim in camera direction if nothing is hit (e.g., sky)
+    //         Vector3 direction = ray.direction;
+    //         direction.y = 0f; // keep only horizontal
+    //         if (direction != Vector3.zero)
+    //         {
+    //             Quaternion lookRot = Quaternion.LookRotation(direction);
+    //             transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRot, 360f * Time.deltaTime);
+    //         }
+    //     }
+    // }
+
     protected abstract void Shoot();
 }

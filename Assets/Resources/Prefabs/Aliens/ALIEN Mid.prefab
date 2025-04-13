@@ -31,6 +31,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 7408827733071776766}
   - {fileID: 2935329756523433593}
   - {fileID: 6491376853191063818}
   m_Father: {fileID: 0}
@@ -74,11 +75,45 @@ MonoBehaviour:
   attackDamage: 0.5
   health: 30
   DeathTimer: 4
+  score: 50
   animator: {fileID: 3428019942716075401}
+  bloodFxTransform: {fileID: 7408827733071776766}
+  bloodFx: {fileID: 2235849171968774302, guid: f90a2f30fae4db74ca6ce34d62ec30d9, type: 3}
   projectilePrefab: {fileID: 4989434321755356040, guid: 5f518ac9c224fe244aab6aa3053e9d19,
     type: 3}
   firePoint: {fileID: 2935329756523433593}
   shootDelayTimer: 1
+--- !u!1 &2499932722084319309
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7408827733071776766}
+  m_Layer: 7
+  m_Name: Fxpos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7408827733071776766
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2499932722084319309}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.966, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 104309931740532636}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5736938469490793876
 GameObject:
   m_ObjectHideFlags: 0

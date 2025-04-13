@@ -14,6 +14,8 @@ public abstract class AlienBase : MonoBehaviour
     public int score = 50;
     
     public Animator animator;
+    [SerializeField] Transform bloodFxTransform;
+    [SerializeField] GameObject bloodFx;
 
     protected float cooldownTimer;
     protected float currentHealth;
@@ -86,6 +88,7 @@ public abstract class AlienBase : MonoBehaviour
 
     protected virtual void Die()
     {
+        Instantiate(bloodFx,bloodFxTransform.position,Quaternion.identity); // Blood EFFCTS
         LevelManager.Instance.UpdateScore(score);
         isAlive = false;
         Destroy(gameObject.GetComponent<Collider>());

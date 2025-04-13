@@ -12,10 +12,10 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: marz game
-  defaultCursor: {fileID: 0}
-  cursorHotspot: {x: 0, y: 0}
+  companyName: GameDev Purvesh
+  productName: Mars Revive
+  defaultCursor: {fileID: 2800000, guid: ee7d3c5868e6ee147b64b577677d9e5a, type: 3}
+  cursorHotspot: {x: 64, y: 64}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
@@ -285,7 +285,14 @@ PlayerSettings:
   AndroidMinifyDebug: 0
   AndroidValidateAppBundleSize: 1
   AndroidAppBundleSizeToValidate: 150
-  m_BuildTargetIcons: []
+  m_BuildTargetIcons:
+  - m_BuildTarget: 
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: f5ac9e1ec217ee543b874e9712c3bd8c, type: 3}
+      m_Width: 128
+      m_Height: 128
+      m_Kind: 0
   m_BuildTargetPlatformIcons:
   - m_BuildTarget: iPhone
     m_Icons:

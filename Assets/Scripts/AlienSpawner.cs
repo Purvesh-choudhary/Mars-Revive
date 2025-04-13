@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AlienSpawner : MonoBehaviour
@@ -7,8 +9,11 @@ public class AlienSpawner : MonoBehaviour
     public GameObject[] enemyPrefabs;
     public Transform[] spawnPoints;
     public int maxEnemiesInScene = 10;
+    [SerializeField] TextMeshProUGUI enemiesinscene;
 
     private List<GameObject> weightedEnemies = new List<GameObject>();
+
+    public static bool canSpawn = true;
 
     void Start()
     {   
@@ -28,7 +33,8 @@ public class AlienSpawner : MonoBehaviour
     void Update()
     {
         int currentEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
-        if (currentEnemies < maxEnemiesInScene){
+        enemiesinscene.text = currentEnemies.ToString();                // Debug 🚨
+        if (currentEnemies < maxEnemiesInScene && canSpawn){
             SpawnEnemy();
         }
 

@@ -12,7 +12,10 @@ public class GameManager : MonoBehaviour
     {
         if(Instance == null){
             Instance = this;
+        }else if(Instance != this){
+            Destroy(this);
         }
+        DontDestroyOnLoad(this);
     }
 
     // Start is called before the first frame update
@@ -47,6 +50,23 @@ public class GameManager : MonoBehaviour
 
     public void Back(){
         Debug.Log($"BACK");
+    }
+
+    public void RestartLevel(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    
+    public void MainMenu(){
+        SceneManager.LoadScene(0);
+    }
+
+    public void loadScene(int index){
+        SceneManager.LoadScene(index);
+    }
+
+    public IEnumerator LoadSceneCoroutine(float timer ,int index){
+        yield return new WaitForSeconds(timer); 
+        loadScene(index);
     }
 
 }
