@@ -92,6 +92,7 @@ public abstract class AlienBase : MonoBehaviour
         LevelManager.Instance.UpdateScore(score);
         isAlive = false;
         Destroy(gameObject.GetComponent<Collider>());
+        Destroy(gameObject.GetComponent<Rigidbody>());
         animator.SetTrigger("isDead");
         Destroy(gameObject,DeathTimer);
     }

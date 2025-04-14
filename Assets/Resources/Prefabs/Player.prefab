@@ -646,7 +646,7 @@ Transform:
   m_GameObject: {fileID: 5513158337191104378}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.0197, z: 0.281}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -705,7 +705,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57703a1491671834986a1dd792f25f1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  acceleration: 10
+  deceleration: 5
+  maxSpeed: 10
   rotationSpeed: 200
 --- !u!114 &3455250693962710523
 MonoBehaviour:
@@ -865,6 +867,7 @@ MonoBehaviour:
   - {fileID: 2254475014753033566}
   - {fileID: 5788257893907988675}
   maxEnemiesInScene: 10
+  enemiesinscene: {fileID: 0}
 --- !u!1 &6075123895638512665
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,17 +4,50 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 5f;
+    public float acceleration = 10f;
+    public float deceleration = 5f;
+    public float maxSpeed = 10f;
     public float rotationSpeed = 100f;
 
-    void Update()
-    {
-        // Forward/Backward Movement
-        float moveInput = Input.GetAxis("Vertical");
-        transform.Translate(Vector3.forward * moveInput * moveSpeed * Time.deltaTime);
+    private Rigidbody rb;
+    private float currentSpeed = 0f;
 
-        // Left/Right Rotation
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
+    void FixedUpdate()
+    {
+        float moveInput = Input.GetAxis("Vertical");
         float rotateInput = Input.GetAxis("Horizontal");
-        transform.Rotate(Vector3.up * rotateInput * rotationSpeed * Time.deltaTime);
+
+        // Accelerate or decelerate based on input
+        if (Mathf.Abs(moveInput) > 0.1f)
+        {
+            currentSpeed += moveInput * acceleration * Time.fixedDeltaTime;
+        }
+        else
+        {
+            // Slowly reduce speed when no input (simulate friction)
+            currentSpeed = Mathf.MoveTowards(currentSpeed, 0f, deceleration * Time.fixedDeltaTime);
+        }
+
+        // Clamp speed
+        currentSpeed = Mathf.Clamp(currentSpeed, -maxSpeed, maxSpeed);
+
+        // Apply movement
+        Vector3 moveDirection = transform.forward * currentSpeed * Time.fixedDeltaTime;
+        rb.MovePosition(rb.position + moveDirection);
+
+        // Apply rotation
+       // Quaternion rotateOffset = Quaternion.Euler(Vector3.up * rotateInput * rotationSpeed * Time.fixedDeltaTime);
+        float effectiveRotation = rotateInput * rotationSpeed * Time.fixedDeltaTime;
+        if (currentSpeed < -0.1f){
+            effectiveRotation *= -1; // Reverse rotation when moving backward
+        }  
+        Quaternion rotateOffset = Quaternion.Euler(Vector3.up * effectiveRotation);
+
+        rb.MoveRotation(rb.rotation * rotateOffset);
     }
 }

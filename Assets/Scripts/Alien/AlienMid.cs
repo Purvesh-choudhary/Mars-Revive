@@ -6,7 +6,8 @@ public class AlienMid : AlienBase
 {
     public GameObject projectilePrefab;
     public Transform firePoint;
-    public float shootDelayTimer = 1f;
+    public float shootDelayTimer = 1f , bulletSpeed = 50f;
+    
 
     protected override void Attack()
     {
@@ -22,7 +23,7 @@ public class AlienMid : AlienBase
         yield return new WaitForSeconds(shootDelayTimer); 
 
         GameObject bullet = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
-        bullet.GetComponent<Rigidbody>().velocity = firePoint.forward * 30f;
+        bullet.GetComponent<Rigidbody>().velocity = firePoint.forward * bulletSpeed;
     }   
 
 }
