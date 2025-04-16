@@ -25,11 +25,21 @@ public class CannonWeapon : WeaponBase
         if (Physics.SphereCast(ray, coneRadius, out RaycastHit hit, shootRange, hitLayers))
         {
             // ✨ Hit Effect
-            if (hitEffectPrefab != null)
-            {
-                GameObject impactVFX = Instantiate(hitEffectPrefab, hit.point, Quaternion.LookRotation(hit.normal));
-                Destroy(impactVFX, 2f);
+            if(hit.transform.gameObject.layer == LayerMask.NameToLayer("Aliens")){
+                if (hitEffectPrefab != null)
+                {
+                    GameObject impactVFX = Instantiate(hitEffectPrefab, hit.point, Quaternion.LookRotation(hit.normal));
+                    Destroy(impactVFX, 2f);
+                }
+            }else{
+                if (hitEffectNormalPrefab != null)
+                {
+                    GameObject impactVFX = Instantiate(hitEffectNormalPrefab, hit.point, Quaternion.LookRotation(hit.normal));
+                    Destroy(impactVFX, 2f);
+                }
             }
+
+           
 
             // 💥 Play hit sound
             if (hitSound != null && audioSource != null)

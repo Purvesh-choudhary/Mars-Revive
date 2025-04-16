@@ -15,7 +15,7 @@ public abstract class AlienBase : MonoBehaviour
     
     public Animator animator;
     [SerializeField] Transform bloodFxTransform;
-    [SerializeField] GameObject bloodFx;
+    [SerializeField] GameObject bloodFx , bloodOnGroundFx;
 
     protected float cooldownTimer;
     protected float currentHealth;
@@ -36,32 +36,33 @@ public abstract class AlienBase : MonoBehaviour
     {
         distance = Vector3.Distance(transform.position, player.position);
 
-        if (distance <= attackRange)
-        {
 
-            if (cooldownTimer <= 0)
-
+        if(isAlive){        
+            if (distance <= attackRange)
             {
-                animator.SetTrigger("attack");
-                Attack();
 
-                cooldownTimer = attackCooldown;
+                if (cooldownTimer <= 0)
+
+                {
+                    animator.SetTrigger("attack");
+                    Attack();
+
+                    cooldownTimer = attackCooldown;
+
+                }
 
             }
-
-        }
-
-        // else if (distance <= chaseRange && isAlive)
-        else if (isAlive)
-        {
-            AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
-            if (!stateInfo.IsName("Attack")) 
+            // else if (distance <= chaseRange && isAlive)
+            else
             {
-                ChasePlayer();
+                AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+                if (!stateInfo.IsName("Attack")) 
+                {
+                    ChasePlayer();
+                }
+
             }
-
         }
-
         cooldownTimer -= Time.deltaTime;
     }
 
@@ -89,6 +90,7 @@ public abstract class AlienBase : MonoBehaviour
     protected virtual void Die()
     {
         Instantiate(bloodFx,bloodFxTransform.position,Quaternion.identity); // Blood EFFCTS
+        Instantiate(bloodOnGroundFx,transform.position,Quaternion.identity); // Blood On Ground EFFCTS
         LevelManager.Instance.UpdateScore(score);
         isAlive = false;
         Destroy(gameObject.GetComponent<Collider>());

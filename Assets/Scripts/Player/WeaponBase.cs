@@ -11,8 +11,7 @@ public abstract class WeaponBase : MonoBehaviour
 
     public Transform firePoint;
     public LayerMask hitLayers;
-    public GameObject hitEffectPrefab;
-    public GameObject muzzleFlashPrefab;
+    public GameObject hitEffectPrefab, hitEffectNormalPrefab, muzzleFlashPrefab;
     public LineRenderer laserLine;
 
     public AudioClip shootSound;

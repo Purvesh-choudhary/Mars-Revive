@@ -80,6 +80,8 @@ MonoBehaviour:
   animator: {fileID: 1128916421081851688}
   bloodFxTransform: {fileID: 8489962221398028643}
   bloodFx: {fileID: 2235849171968774302, guid: f90a2f30fae4db74ca6ce34d62ec30d9, type: 3}
+  bloodOnGroundFx: {fileID: 3369763527703088337, guid: db55db3b9919bfa4e9810ae0198c1410,
+    type: 3}
   smashDelayTimer: 1.65
 --- !u!114 &5084106977002818658
 MonoBehaviour:

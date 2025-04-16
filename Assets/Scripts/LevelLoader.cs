@@ -11,6 +11,7 @@ public class LevelLoader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.visible = false;
         GameManager.Instance.StartCoroutine(GameManager.Instance.LoadSceneCoroutine(timer,index));
     }
 
