@@ -9,8 +9,11 @@ public class PlayerController : MonoBehaviour
     public float maxSpeed = 10f;
     public float rotationSpeed = 100f;
 
+    [SerializeField] AudioSource audioSource;
+
     private Rigidbody rb;
     private float currentSpeed = 0f;
+    
 
     void Start()
     {
@@ -25,11 +28,13 @@ public class PlayerController : MonoBehaviour
         // Accelerate or decelerate based on input
         if (Mathf.Abs(moveInput) > 0.1f)
         {
+            if(!audioSource.isPlaying) audioSource.Play();
             currentSpeed += moveInput * acceleration * Time.fixedDeltaTime;
         }
         else
         {
             // Slowly reduce speed when no input (simulate friction)
+            audioSource.Stop();
             currentSpeed = Mathf.MoveTowards(currentSpeed, 0f, deceleration * Time.fixedDeltaTime);
         }
 

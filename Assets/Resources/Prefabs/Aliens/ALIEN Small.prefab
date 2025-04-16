@@ -60,6 +60,8 @@ MonoBehaviour:
   bloodFx: {fileID: 2235849171968774302, guid: f90a2f30fae4db74ca6ce34d62ec30d9, type: 3}
   bloodOnGroundFx: {fileID: 3369763527703088337, guid: db55db3b9919bfa4e9810ae0198c1410,
     type: 3}
+  dropUp: {fileID: 4160707051484952331, guid: 3e764cc2c6be26f40beed87f72db562b, type: 3}
+  dropUpChances: 1
 --- !u!65 &423684418121049593
 BoxCollider:
   m_ObjectHideFlags: 0

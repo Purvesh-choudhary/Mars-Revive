@@ -17,12 +17,17 @@ public abstract class AlienBase : MonoBehaviour
     [SerializeField] Transform bloodFxTransform;
     [SerializeField] GameObject bloodFx , bloodOnGroundFx;
 
+    [SerializeField] GameObject dropUp;
+    [SerializeField ,Range(0, 100)] float dropUpChances = 10;
+
     protected float cooldownTimer;
     protected float currentHealth;
 
     protected Transform player;
     protected bool isAlive=true;
     protected float distance;
+
+
 
 
 
@@ -100,5 +105,14 @@ public abstract class AlienBase : MonoBehaviour
     }
 
     protected abstract void Attack();
+
+
+    void OnDestroy()
+    {
+        int r = Random.Range(0,100);
+        if(r < dropUpChances){
+            Instantiate(dropUp, transform.position, Quaternion.identity);
+        }
+    }
 }
 

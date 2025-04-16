@@ -66,17 +66,47 @@ PrefabInstance:
     - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.5694642
+      value: 0.84104663
       objectReference: {fileID: 0}
     - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.58591497
+      value: 0.86555284
       objectReference: {fileID: 0}
     - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.6320754
+      value: 0.9433962
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.b
+      value: 0.1514329
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.g
+      value: 0.18381342
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.r
+      value: 0.38679248
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.b
+      value: 0.3773585
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.g
+      value: 0.3773585
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851049320895197647, guid: 900873a2eb8120c45bdebfe72e5a1992,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.r
+      value: 0.3773585
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

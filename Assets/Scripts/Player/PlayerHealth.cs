@@ -69,5 +69,19 @@ public class PlayerHealth : MonoBehaviour
         c.a = alpha;
         img.color = c;
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("DropUp")){
+            Debug.Log("COLLECTED DROP BOX");
+            DropUp dropUp = other.GetComponent<DropUp>();
+            if(dropUp.dropType == DropUp.Droptype.health){
+                currentHealth += dropUp.dropQuantity;
+                if(currentHealth >100) currentHealth = 100;
+            }
+            healthUI.text = ((int)currentHealth).ToString();
+            Destroy(other.gameObject);
+        }
+    }
 }
 
