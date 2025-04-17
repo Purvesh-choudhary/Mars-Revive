@@ -23,7 +23,7 @@ public class DropUp : MonoBehaviour
         transform.Rotate(rotateDirection * Time.deltaTime , Space.Self);
     }
 
-    void OnDestroy()
+    public void DropCollectFX()
     {
         Instantiate(dropCollectedFX,transform.position,Quaternion.identity);
     }

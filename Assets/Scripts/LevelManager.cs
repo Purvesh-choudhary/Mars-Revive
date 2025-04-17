@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
@@ -16,7 +17,10 @@ public class LevelManager : MonoBehaviour
     //  // DEBUGS 🚨
     [SerializeField] TextMeshProUGUI basesCounterDebug , energyballCounterDebug;
 
+    [SerializeField] Slider energySlider;
+    float energyPerBall;
 
+    AlienSpawner alienSpawner;
     
     
     void OnEnable()
@@ -34,6 +38,7 @@ public class LevelManager : MonoBehaviour
         if(Instance == null){
             Instance = this;
         }    
+        alienSpawner = FindObjectOfType<AlienSpawner>();
     }
 
     void Start()
@@ -47,6 +52,9 @@ public class LevelManager : MonoBehaviour
         basesCounterDebug.text = allBases.Count.ToString();  // Debug 🚨
         energyballCounterDebug.text = allEnergyBalls.Count.ToString();  // Debug 🚨
 
+        energyPerBall = 100 / allEnergyBalls.Count;
+        energySlider.value = 0;
+        
     }
 
     void BaseDestroyedHandler(BaseHealth destroyedBase)
@@ -66,8 +74,9 @@ public class LevelManager : MonoBehaviour
     public void EnergyBallCollected(EnergyBall collectedEnergyBall){
         allEnergyBalls.Remove(collectedEnergyBall);
         energyballCounterDebug.text = allEnergyBalls.Count.ToString();  // Debug 🚨
+        energySlider.value += energyPerBall;
         if(allEnergyBalls.Count == 0){
-            AlienSpawner.canSpawn = false;
+            alienSpawner.canSpawn = false;
         }
     }
 

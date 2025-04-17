@@ -79,7 +79,9 @@ public class PlayerHealth : MonoBehaviour
                 currentHealth += dropUp.dropQuantity;
                 if(currentHealth >100) currentHealth = 100;
             }
+
             healthUI.text = ((int)currentHealth).ToString();
+            dropUp.DropCollectFX();
             Destroy(other.gameObject);
         }
     }

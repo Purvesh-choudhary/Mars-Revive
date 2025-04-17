@@ -13,7 +13,7 @@ public class AlienSpawner : MonoBehaviour
 
     private List<GameObject> weightedEnemies = new List<GameObject>();
 
-    public static bool canSpawn = true;
+    public bool canSpawn = true;
 
     void Start()
     {   

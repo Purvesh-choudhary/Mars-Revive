@@ -101,13 +101,14 @@ public abstract class AlienBase : MonoBehaviour
         Destroy(gameObject.GetComponent<Collider>());
         Destroy(gameObject.GetComponent<Rigidbody>());
         animator.SetTrigger("isDead");
+        DropItem();
         Destroy(gameObject,DeathTimer);
     }
 
     protected abstract void Attack();
 
 
-    void OnDestroy()
+    void DropItem()
     {
         int r = Random.Range(0,100);
         if(r < dropUpChances){
