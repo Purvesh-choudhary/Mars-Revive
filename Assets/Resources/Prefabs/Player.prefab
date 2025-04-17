@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 401698441275310584}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.9, y: 0, z: -16.9}
+  m_LocalPosition: {x: 7.5, y: 0, z: -33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 797679560704496754}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.3, y: 0, z: 14.8}
+  m_LocalPosition: {x: -23.4, y: 0, z: 22.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -87,7 +87,7 @@ Transform:
   m_GameObject: {fileID: 1057953558504142969}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 34.3, y: 0, z: -6.1}
+  m_LocalPosition: {x: 52.2, y: 0, z: -12.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -149,7 +149,7 @@ Transform:
   m_GameObject: {fileID: 1880478848267604614}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.3, y: 0, z: -17.9}
+  m_LocalPosition: {x: -25.8, y: 0, z: -29.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -180,7 +180,7 @@ Transform:
   m_GameObject: {fileID: 2428663074003880672}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -34.8, y: 0, z: -4.1}
+  m_LocalPosition: {x: -44.3, y: 0, z: -12.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -793,15 +793,15 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ef1a7fdbe559a714eb5e0896614c3d19, type: 3}
+  m_audioClip: {fileID: 8300000, guid: cc3d091b29db299428ca5627fafb469c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.872
-  m_Pitch: 1
+  m_Volume: 0.7
+  m_Pitch: 0.5
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 137
+  Priority: 73
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -946,6 +946,7 @@ MonoBehaviour:
   - {fileID: 5788257893907988675}
   maxEnemiesInScene: 30
   enemiesinscene: {fileID: 0}
+  canSpawn: 1
 --- !u!1 &6075123895638512665
 GameObject:
   m_ObjectHideFlags: 0
@@ -1109,7 +1110,7 @@ Transform:
   m_GameObject: {fileID: 6704680118572127552}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26, y: 0, z: 35.2}
+  m_LocalPosition: {x: 46, y: 0, z: 41.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1140,7 +1141,7 @@ Transform:
   m_GameObject: {fileID: 7210531530753584845}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 25.2}
+  m_LocalPosition: {x: 1.5, y: 0, z: 33.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

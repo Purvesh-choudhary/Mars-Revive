@@ -7,12 +7,13 @@ using UnityEngine.UI;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance;
+    [SerializeField] int lvlIndex;
     public List<BaseHealth> allBases;
     public List<EnergyBall> allEnergyBalls;
 
     // UI RELATED 
     [SerializeField] GameObject levelCompletePanel, hudPanel;
-    [SerializeField] TextMeshProUGUI scoreUI;
+    [SerializeField] TextMeshProUGUI scoreUI, finalScoreUI;
     int score;
     //  // DEBUGS 🚨
     [SerializeField] TextMeshProUGUI basesCounterDebug , energyballCounterDebug;
@@ -57,18 +58,26 @@ public class LevelManager : MonoBehaviour
         
     }
 
+
+    /// <summary>
+    /// Update is called every frame, if the MonoBehaviour is enabled.
+    /// </summary>
+    private void Update()
+    {
+        if(allBases.Count == 0 && allEnergyBalls.Count == 0 && alienSpawner.GetCurrentEnemies() <= 0){
+            LevelComplete();
+        }
+    }
+
     void BaseDestroyedHandler(BaseHealth destroyedBase)
     {
         allBases.Remove(destroyedBase);
         basesCounterDebug.text = allBases.Count.ToString();  // Debug 🚨
-        if (allBases.Count == 0)
-        {
-            Debug.Log("Level Complete!");
-            levelCompletePanel.SetActive(true);
-            hudPanel.SetActive(false);
-
-            // Load next level or show win UI
-        }
+        // if (allBases.Count == 0)
+        // {
+        //     LevelComplete();
+        //     // Load next level or show win UI
+        // }
     }
 
     public void EnergyBallCollected(EnergyBall collectedEnergyBall){
@@ -84,4 +93,18 @@ public class LevelManager : MonoBehaviour
         score += newScore; 
         scoreUI.text = score.ToString();
     }
+
+    void LevelComplete(){
+        Debug.Log("Level Complete!");
+        levelCompletePanel.SetActive(true);
+        hudPanel.SetActive(false);
+        finalScoreUI.text = score.ToString();
+        GameManager.Instance.LevelComplete(score, lvlIndex);
+    }
+
+
+    public void NextLevel(){
+        GameManager.Instance.NextLevel();
+    }
+
 }

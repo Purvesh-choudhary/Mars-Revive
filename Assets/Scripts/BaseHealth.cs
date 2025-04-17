@@ -14,6 +14,9 @@ public class BaseHealth : MonoBehaviour
     public delegate void BaseDestroyed(BaseHealth baseHealth);
     public static event BaseDestroyed OnBaseDestroyed;
 
+    [SerializeField] bool isGenerator = false;
+    [SerializeField] GameObject energyBarrier;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -34,6 +37,9 @@ public class BaseHealth : MonoBehaviour
             fullDamageFx.transform.SetParent(null, true);
             fullDamageFx.gameObject.SetActive(true);
             fullDamageFx.GetComponent<CinemachineImpulseSource>()?.GenerateImpulse();
+            if(isGenerator){
+                Destroy(energyBarrier);
+            }
             Destroy(gameObject);
         }
     }

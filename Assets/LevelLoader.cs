@@ -5,8 +5,9 @@ using UnityEngine;
 public class LevelLoader : MonoBehaviour
 {
 
-    [SerializeField] int index;
+    [SerializeField] int index , loadingLevelIndex;
     [SerializeField] float timer;
+    
 
     // Start is called before the first frame update
     void Start()

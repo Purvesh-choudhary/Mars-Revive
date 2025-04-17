@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,8 +6,8 @@ using UnityEngine;
 public class EnergyBall : MonoBehaviour
 {
     public WaveManager waveManager;
-    [SerializeField] GameObject forceFeild;
     [SerializeField] private int noOfAliens = 5;
+ 
 
     private void OnTriggerEnter(Collider other)
     {
@@ -14,7 +15,6 @@ public class EnergyBall : MonoBehaviour
         {
             waveManager.SpawnWave(noOfAliens); // Trigger wave spawn
             LevelManager.Instance.EnergyBallCollected(GetComponent<EnergyBall>());
-            Destroy(forceFeild);
             Destroy(gameObject);
         }
     }

@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class AlienBase : MonoBehaviour
 {
     public float moveSpeed;
-    //public float chaseRange;
+    public float chaseRange = float.PositiveInfinity;
     public float attackRange;
     public float attackCooldown;
     public float attackDamage;
@@ -57,8 +57,8 @@ public abstract class AlienBase : MonoBehaviour
                 }
 
             }
-            // else if (distance <= chaseRange && isAlive)
-            else
+            else if (distance <= chaseRange)
+            // else
             {
                 AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
                 if (!stateInfo.IsName("Attack")) 

@@ -9,6 +9,7 @@ public class AlienSpawner : MonoBehaviour
     public GameObject[] enemyPrefabs;
     public Transform[] spawnPoints;
     public int maxEnemiesInScene = 10;
+    int currentEnemies;
     [SerializeField] TextMeshProUGUI enemiesinscene;
 
     private List<GameObject> weightedEnemies = new List<GameObject>();
@@ -27,12 +28,15 @@ public class AlienSpawner : MonoBehaviour
         weightedEnemies.Add(enemyPrefabs[1]);
         // GIANT
         weightedEnemies.Add(enemyPrefabs[2]); 
+
+        
+
     }
 
 
     void Update()
     {
-        int currentEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        currentEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
         enemiesinscene.text = currentEnemies.ToString();                // Debug 🚨
         if (currentEnemies < maxEnemiesInScene && canSpawn){
             SpawnEnemy();
@@ -52,5 +56,9 @@ public class AlienSpawner : MonoBehaviour
 
         Instantiate(weightedEnemies[enemyIndex], spawnPoints[spawnIndex].position, Quaternion.identity);
     
+    }
+
+    public int GetCurrentEnemies(){
+        return currentEnemies;
     }
 }

@@ -81,12 +81,17 @@ PrefabInstance:
     - target: {fileID: 2166482093005531698, guid: 4c2fd589debf066488fcc78b2e24c024,
         type: 3}
       propertyPath: m_Name
-      value: AlienBase2
+      value: Generator
       objectReference: {fileID: 0}
     - target: {fileID: 4358123239432246519, guid: 4c2fd589debf066488fcc78b2e24c024,
         type: 3}
       propertyPath: maxHealth
       value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 4358123239432246519, guid: 4c2fd589debf066488fcc78b2e24c024,
+        type: 3}
+      propertyPath: isGenerator
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7633180685681770936, guid: 4c2fd589debf066488fcc78b2e24c024,
         type: 3}

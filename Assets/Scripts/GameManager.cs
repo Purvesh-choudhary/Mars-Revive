@@ -7,7 +7,9 @@ public class GameManager : MonoBehaviour
 {
     
     public static GameManager Instance;
-    
+    public int totalScore, lvlsCompleted;
+
+
     void Awake()
     {
         if(Instance == null){
@@ -67,6 +69,17 @@ public class GameManager : MonoBehaviour
     public IEnumerator LoadSceneCoroutine(float timer ,int index){
         yield return new WaitForSeconds(timer); 
         loadScene(index);
+    }
+
+    public void LevelComplete(int finalScore ,int lvlDone){
+        totalScore += finalScore;
+        if(lvlsCompleted < lvlDone){
+            lvlsCompleted = lvlDone;
+        }
+    }
+
+    public void NextLevel(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
 }
