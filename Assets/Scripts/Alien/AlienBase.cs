@@ -132,5 +132,24 @@ public abstract class AlienBase : MonoBehaviour
             Instantiate(dropUp, transform.position, Quaternion.identity);
         }
     }
+
+
+
+    void OnTriggerEnter(Collider other)
+    {
+        //Debug.Log($"Die by Falling ");
+        if(other.CompareTag("PotHole")){
+            Die();
+        }
+    }
+
+    
+    private void OnTriggerStay(Collider other)
+    {
+        //Debug.Log($"Die by Falling ");
+        if(other.CompareTag("PotHole")){
+            Die();
+        }
+    }
 }
 

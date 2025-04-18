@@ -23,7 +23,7 @@ public class AlienGiant : AlienBase
         {
             if(audioSource.clip != SmashAudio){
                 audioSource.clip = SmashAudio;
-                audioSource.spatialBlend = 0.5f;
+                audioSource.spatialBlend = 0f;
             }
             
             if(!audioSource.isPlaying){

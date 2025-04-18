@@ -12,11 +12,11 @@ public class LevelManager : MonoBehaviour
     public List<EnergyBall> allEnergyBalls;
 
     // UI RELATED 
-    [SerializeField] GameObject levelCompletePanel, hudPanel;
-    [SerializeField] TextMeshProUGUI scoreUI, finalScoreUI;
+    [SerializeField] GameObject levelCompletePanel, hudPanel, finalEnemyPanel;
+    [SerializeField] TextMeshProUGUI scoreUI, finalScoreUI , finalEnemyCounts;
     int score;
     //  // DEBUGS 🚨
-    [SerializeField] TextMeshProUGUI basesCounterDebug , energyballCounterDebug;
+    [SerializeField] TextMeshProUGUI basesCounterDebug , energyballCounterDebug , hintText;
 
     [SerializeField] Slider energySlider;
     float energyPerBall;
@@ -64,9 +64,22 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        if(allBases.Count == 0 && allEnergyBalls.Count == 0 && alienSpawner.GetCurrentEnemies() <= 0){
-            LevelComplete();
+        if(allBases.Count == 0 && allEnergyBalls.Count == 0){
+            hintText.gameObject.SetActive(true);
+            hintText.text =  "Clear the Area!";
+            finalEnemyPanel.SetActive(true);
+            finalEnemyCounts.text = alienSpawner.GetCurrentEnemies().ToString();
+            if(alienSpawner.GetCurrentEnemies() <= 0){
+                LevelComplete();
+            }
         }
+
+        if(allBases.Count > 0 && allEnergyBalls.Count == 0){
+            hintText.gameObject.SetActive(true);
+            hintText.text =  allBases.Count + " Base Left!";
+        }
+        
+
     }
 
     void BaseDestroyedHandler(BaseHealth destroyedBase)
@@ -98,6 +111,7 @@ public class LevelManager : MonoBehaviour
         Debug.Log("Level Complete!");
         levelCompletePanel.SetActive(true);
         hudPanel.SetActive(false);
+        finalEnemyPanel.SetActive(false);
         finalScoreUI.text = score.ToString();
         GameManager.Instance.LevelComplete(score, lvlIndex);
     }
