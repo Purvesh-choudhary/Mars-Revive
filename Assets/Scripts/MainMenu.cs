@@ -24,4 +24,11 @@ public class MainMenu : MonoBehaviour
         GameManager.Instance.Quit();
     }
 
+    
+    public void OpenURL(string url){
+        Application.OpenURL(url);
+    }
+
+
+
 }
