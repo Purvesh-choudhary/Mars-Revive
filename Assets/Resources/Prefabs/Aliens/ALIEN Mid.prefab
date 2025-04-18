@@ -71,6 +71,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
+  chaseRange: Infinity
   attackRange: 7
   attackCooldown: 1
   attackDamage: 2
@@ -82,6 +83,8 @@ MonoBehaviour:
   bloodFx: {fileID: 2235849171968774302, guid: f90a2f30fae4db74ca6ce34d62ec30d9, type: 3}
   bloodOnGroundFx: {fileID: 3369763527703088337, guid: db55db3b9919bfa4e9810ae0198c1410,
     type: 3}
+  audioSource: {fileID: 0}
+  audioClips: []
   dropUp: {fileID: 4160707051484952331, guid: 3e764cc2c6be26f40beed87f72db562b, type: 3}
   dropUpChances: 2
   projectilePrefab: {fileID: 4989434321755356040, guid: 5f518ac9c224fe244aab6aa3053e9d19,

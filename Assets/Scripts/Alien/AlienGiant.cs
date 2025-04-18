@@ -6,6 +6,7 @@ using UnityEngine;
 public class AlienGiant : AlienBase
 {
     public float smashDelayTimer;
+    [SerializeField] ParticleSystem smashFx;
 
     protected override void Attack()
     {
@@ -20,6 +21,15 @@ public class AlienGiant : AlienBase
         gameObject.GetComponent<CinemachineImpulseSource>()?.GenerateImpulse();
         if (distance <= (attackRange+2f))
         {
+            if(audioSource.clip != SmashAudio){
+                audioSource.clip = SmashAudio;
+                audioSource.spatialBlend = 0.5f;
+            }
+            
+            if(!audioSource.isPlaying){
+                audioSource.PlayOneShot(audioSource.clip ,1);
+            }
+            Instantiate(smashFx, transform.position, Quaternion.identity);
             player.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
         }
     }

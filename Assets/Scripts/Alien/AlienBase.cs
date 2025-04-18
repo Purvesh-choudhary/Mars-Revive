@@ -17,6 +17,9 @@ public abstract class AlienBase : MonoBehaviour
     [SerializeField] Transform bloodFxTransform;
     [SerializeField] GameObject bloodFx , bloodOnGroundFx;
 
+    public AudioSource audioSource;
+    public AudioClip walkAudio,SmashAudio,DieAudio;
+
     [SerializeField] GameObject dropUp;
     [SerializeField ,Range(0, 100)] float dropUpChances = 10;
 
@@ -74,6 +77,15 @@ public abstract class AlienBase : MonoBehaviour
     protected void ChasePlayer()
     {
         animator.SetBool("isWalking",true);
+        if(audioSource != null){
+            if(audioSource.clip != walkAudio){
+                audioSource.clip = walkAudio;
+                 audioSource.spatialBlend = 1;
+            }
+            if(!audioSource.isPlaying){   
+                audioSource.Play();
+            }
+        }
         // transform.LookAt(player);
         // transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
 
@@ -95,7 +107,12 @@ public abstract class AlienBase : MonoBehaviour
     protected virtual void Die()
     {
         Instantiate(bloodFx,bloodFxTransform.position,Quaternion.identity); // Blood EFFCTS
-        Instantiate(bloodOnGroundFx,transform.position,Quaternion.identity); // Blood On Ground EFFCTS
+        Instantiate(bloodOnGroundFx,transform.position,Quaternion.identity); // Blood On Ground EFFCTS   
+        if(audioSource != null){
+            audioSource.spatialBlend = 0;
+            audioSource.pitch = Random.Range(0.8f,1.2f);
+            audioSource.PlayOneShot(DieAudio);
+        }
         LevelManager.Instance.UpdateScore(score);
         isAlive = false;
         Destroy(gameObject.GetComponent<Collider>());
